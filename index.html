@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage with Hover Effects</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*background-color: #dcbaec;*/
+}
+
+body {
+    font-family: 'Rockwell ', Rockwell;
+    line-height: 1.6;
+   /*background-color: antiquewhite;*/
+}
+
+/* Header styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height:110px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+nav ul li a:hover {
+    background-color: #f39c12; /* Yellow color on hover */
+    color: #333; /* Dark text color on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Active link style */
+nav ul li a:active {
+    background-color: #e67e22; /* Darker orange for active */
+    transform: translateY(1px); /* Pressed effect */
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    background-color: #dcbaec;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+main h2 {
+    color: #333;
+    font-size: 2em;
+}
+
+/* Footer styling */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: static;
+    width: 100%;
+    bottom: 0;
+}
+.mg{
+    width: 300px;  /* Set the width to 300px */
+  height: 100px; /* Set the height to 200px */
+float: left; /* Makes the image float to the left */
+  margin-right: 15px;
+}
+ul {
+            list-style-type: none; /* Removes default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Style for list items */
+        li {
+            margin-right: 30px; /* Adds spacing between list items */
+            display: inline-block; /* Makes the list items display horizontally */
+        }
+
+        /* Style for the links inside list items */
+        li a {
+            text-decoration: none; /* Removes underline from links */
+            color: #333; /* Sets text color */
+            font-size: 16px; /* Sets the font size */
+            font-family: Rockwell; /* Sets font */
+        }
+
+        li a:hover {
+           background-color: #f39c12; /* Changes color on hover */
+           color: whitesmoke;
+        }
+.content {
+  text-align: center;
+  /*margin-top: 10px;*/
+background-color: #dcbaec;
+}
+
+/* Style for the "Go to Top" button */
+.go-to-top-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Change button color on hover */
+.go-to-top-btn:hover {
+    background-color:#f39c12 ;
+}
+
+  .slider {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+ background-color: #dcbaec;
+}
+
+/* Style the slides container */
+.slides {
+  display: flex;
+  width: 100%;  /* Adjust this based on the number of images */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Style each slide */
+.slide {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Style the navigation buttons */
+/*button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+*/
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}      
+    img {
+            width: auto;
+            height: auto;
+        }
+    .container {
+            overflow: hidden;
+            background-color: #dcbaec;
+         
+        }
+        .container:hover{
+            background-color:antiquewhite ;
+        }
+ .box {
+    background-color: gainsboro; /* Light blue background */
+    padding: 15px;
+    width: 250px;
+    height: 250px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin: 20px;
+    float: left;
+    /*margin-bottom: -10px;*/
+    margin-right: -10px; 
+    transition: transform 0.3s ease-in-out;
+}
+.box .title {
+    list-style: none; /* Removes default bullet points */
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Dark text color */
+}
+
+/* Styling for the second unordered list (details like Features and FAQ) */
+.box .details {
+    list-style: none; /* Removes default bullet points */
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* Styling for list items within the details */
+.box .details li {
+    font-size: 14px;
+    color: #666; /* Lighter text color */
+    margin-bottom: 10px;
+}
+
+/* Styling for the button */
+.box button {
+    padding: 8px 15px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.box button:hover {
+    background-color: #f39c12; /* Changes color on hover */
+           color: whitesmoke; /* Darker blue on hover */
+} 
+.box:hover{
+    background-color: #4CAF50;
+    color: whitesmoke;
+    transform: scale(1.2);
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #4CAF50; /* Semi-transparent blue */
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    transition: left 0.5s linear; /* The left property will change to create the effect */
+    z-index: -1;
+}
+
+
+.box:hover::before {
+    right: 0%; /* Moves the pseudo-element from left to right */
+} 
+.container-fluid{
+  background: #4CAF50;
+  font-family:sans-serif;
+  font-size: 1.2rem;
+}
+.btn{
+  color:black;
+  background-color: #f39c12
+}
+.btn:hover{
+  color:white;
+  background-color:#4CAF50
+}
+h5{
+  color: black;
+}
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 20px 10px;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    .mg {
+        float: none;
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        height: auto;
+    }
+
+    .content {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .slider {
+        margin: 20px auto;
+    }
+
+    .slide img {
+        height: auto;
+    }
+
+    .container {
+      float: none;
+        width: 90%;
+        height: auto;
+        margin: 15px auto;
+    }
+
+    .box {
+        float: none;
+        width: 90%;
+        height: auto;
+        margin: 15px auto;
+    }
+
+    .go-to-top-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+        bottom: 5px;
+        right: 5px;
+    }
+    .container-fluid{
+      font-size: 1rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img class="mg" src="IDBI-Bank-Executive-Answer-Key.webp">
+        <nav class="navbar navbar-expand-lg" style="background: #4CAF50;" >
+            <div class="container-fluid">
+              <a class="navbar-brand"  href="#">Menu</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">New Account</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Balance</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Deposite</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Withdraw</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Transfer</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="login.html">Login/SignUp</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main><br><br><br><br>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" >
+                <img srcset="1711977906255.jpg 480w,1711977906255.jpg 800w"
+                sizes="(max-width:600px)480px,800px"
+                src="1711977906255.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Home Loan</h5>
+                  <p style="color: black;">Home Loan Get 6.5% Interest</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="FFmc1b6XsAEubNv.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Electric Vehicle & Other Car Loan</h5>
+                  <p style="color: black;">Get Loan 6.0% Interest</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="1626933541102.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Gold Loan</h5>
+                  <p style="color: black;">Glod Loan 8.0% interest</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+       <div class="container">
+           <div class="box">
+               <ul style="font-weight:bold;font-size: 25px">Saving Account</ul>
+               <ul>
+                   <center>
+                       <li>* Feature and Benefit</li><br><br>
+                   <li>* FAQ</li><br><br><br>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+                <ul style="font-weight:bold;font-size: 25px">Home Loan</ul>
+               <ul>
+                   <center>
+                   <li>* Feature and Benefit</li>
+                   <li>* EMI Calculation</li>
+                   <li>* Eligibilty & Documentation</li><br><br>
+                    <button>Known More</button>
+                     <button>Apply Now</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+               <ul style="font-weight:bold;font-size: 25px">Customer Care</ul>
+               <ul>
+                   <center>
+                       <li>* Phone Banking</li><br><br>
+                       <li>* Grievance Redressal</li><br><br>
+                    <li>* Customer Education</li>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+                 <ul style="font-weight:bold;font-size: 25px">Interest Rate %</ul>
+               <ul>
+                   <center>
+                       <li>* Domestic Interest Rate</li><br><br>
+                       <li>* Service Charge</li><br><br><br>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+                 <ul style="font-weight:bold;font-size: 25px">Gold Loan</ul>
+               <ul>
+                   <center>
+                       <li>* Feature and Benefit</li><br><br>
+                       <li>* Charge &  Rate</li><br><br><br>
+                        <button>Apply Now</button>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+                 <ul style="font-weight:bold;font-size: 25px">Senior Citizen Account</ul>
+               <ul>
+                   <center>
+                       <li>* Feature and Benefit</li><br><br>
+                       <li>* Advantage</li><br><br>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+                 <ul style="font-weight:bold;font-size: 25px">Car Loan</ul>
+               <ul>
+                   <center>
+                       <li>* Feature and Benefit</li><br><br>
+                       <li>* Charge &  Rate</li><br><br><br>
+                        <button>Apply Now</button>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+                 <ul style="font-weight:bold;font-size: 25px">Travel Loan</ul>
+               <ul>
+                   <center>
+                       <li>* Feature and Benefit</li><br><br>
+                       <li>* Charge &  Rate</li><br><br><br>
+                        <button>Apply Now</button>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+            <div class="box">
+                 <ul style="font-weight:bold;font-size: 25px">Tax payments</ul>
+               <ul>
+                   <center>
+                       <li>* Feature and Benefit</li><br><br>
+                       <li>* Charge &  Rate</li><br><br><br>
+                        <button>Pay Now</button>
+                   </center>
+               </ul>
+           </div>
+           <div class="box">
+                 <ul style="font-weight:bold;font-size: 25px">Education Loan</ul>
+               <ul>
+                   <center>
+                       <li>* Feature and Benefit</li><br><br>
+                       <li>* Charge &  Rate</li><br><br><br>
+                        <button>Apply Now</button>
+                    <button>Known More</button>
+                   </center>
+               </ul>
+           </div>
+       </div><br><br>
+        <div class="container">
+            <ul  style="font-weight:bold;font-size: 45px; color:#f39c12" >Digital Banking Service</ul>
+
+            <div class="box"id="box1"style="height:150px;width: 150px;float: left;margin-left:15px;padding: 10px;">
+              <img style="width:55px;height: 55px" src="2165462.png" alt="Description of image"><br>
+            <a href="#" style="text-decoration:none">Soft Token</a>  
+           </div>    
+         <div class="box" style="height:150px;width: 150px; float: left;margin-left: 15px;">
+             <img style="width:55px;height: 55px" src="internet-banking-512.webp" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Internet Banking</a>
+             
+         </div>
+            <div class="box" style="height:150px;width: 150px;float: left;margin-left: 15px;">
+                <img style="width:55px;height: 55px" src="848331.png" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Mobile Banking</a>
+            </div>
+            <div class="box" style="height:150px;width: 150px;float: left;margin-left: 15px;">
+              <img style="width:55px;height: 55px" src="images.png" alt="Description of image">
+             <a href="#" style="text-decoration:none">WhatsApp Banking</a>  
+            </div>
+            <div class="box" style="height:150px;width: 150px;float: left;margin-left: 15px;">
+                <img style="width:55px;height: 55px" src="9776212.png" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">FASTag</a>  
+            </div>
+            <div class="box" style="height:150px;width: 150px;float: left;margin-left: 15px;">
+                <img style="width:55px;height: 55px" src="17442792.png" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Vedio KYC</a>    
+            </div>
+            <div class="box" style="height:150px;width: 150px;float: left; margin-left: 15px;">
+               <img style="width:55px;height: 55px" src="card-pin-2854347-2375842.webp" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Generate Debit Card Pin</a>   
+            </div>
+            <div class="box" style="height:150px;width: 150px;float: left; margin-left: 15px; ">
+               <img style="width:55px;height: 55px" src="scss.png" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">IDBI Samridhi Portal</a>   
+            </div>
+          
+    </div>
+       <ul style="font-weight:bold;font-size: 45px; color:#f39c12">Other Links</ul>
+       <div class="container">
+           <center>
+           <div class="box" style="height:170px;width: 170px;float: left;margin-left:-15 px;">
+               <img style="width:55px;height: 55px" src="png-clipart-computer-icons-career-portfolio-symbol-portfolio-miscellaneous-rectangle.png" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Carrer</a>  
+       </div>
+                </center>
+           <div class="box" style="height:170px;width: 170px;float: left;margin-left:15 px;">
+               <img style="width:55px;height: 55px" src="png-clipart-reserve-bank-of-india-interest-rate-central-bank-indian-bank-emblem-label.png" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">RBI Advisary</a>  
+       </div>
+           <div class="box" style="height:170px;width: 170px;float: left;margin-left:15 px;">
+               <img style="width:55px;height: 55px" src="pngtree-vector-retirement-icon-png-image_3774161.jpg" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Retired Employees</a>  
+       </div>
+                  <div class="box" style="height:170px;width: 170px;float: left;margin-left:15 px;">
+               <img style="width:55px;height: 55px" src="e7a229c0767cce379aca0cd95cd35bd3.jpg" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">FAQ</a>  
+       </div>
+                  <div class="box" style="height:170px;width: 170px;float: left;margin-left:15 px;">
+               <img style="width:55px;height: 55px" src="pngtree-company-line-icon-png-image_9137749.png" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Group Companies</a>  
+       </div>
+                  <div class="box" style="height:170px;width: 170px;float: left;margin-left:15 px;">
+               <img style="width:55px;height: 55px" src="service-charge-icon-style-vector.jpg" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">Service & Charge</a>  
+       </div>
+                  <div class="box" style="height:170px;width: 170px;float: left;margin-left:15 px;">
+               <img style="width:55px;height: 55px" src="rti_nid_5_excusemesir.jpg" alt="Description of image"><br>
+             <a href="#" style="text-decoration:none">RTI</a>  
+       </div>
+       </div>
+    </main>
+
+    <footer>
+        <ul>
+            
+            <li style="float: center"><a href="#">Contact With us</a> <br><br><a href="#">IDBI Tranning College</a></li>
+            <li style="float:center"><a href="#">E-Auction</a> <br><br><a href="#">Tender Award</a></li>
+             <li style="float:center"><a href="#">SiteMap</a> <br><br><a href="#">FAQ</a></li><br>    
+        </ul
+        <br><br>
+         <p class="copyright">© 2024 Rittick Bar. All rights reserved</p>
+  <!-- Go to top button -->
+ <button id="goToTopBtn" class="go-to-top-btn" onclick="scrollToTop()">↑</button>
+  <script>
+/// Get the button
+const goToTopBtn = document.getElementById("goToTopBtn");
+
+// Show the button when the user scrolls down 100px
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        goToTopBtn.style.display = "block";
+    } else {
+        goToTopBtn.style.display = "none";
+    }
+};
+
+// Scroll to top when the button is clicked
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+let slideIndex = 0;
+
+function moveSlide(direction) {
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  slideIndex = (slideIndex + direction + totalSlides) % totalSlides; // Ensure circular navigation
+  
+  const slidesContainer = document.querySelector('.slides');
+  slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+// Automatic slide transition (every 5 seconds)
+setInterval(() => {
+  moveSlide(1);
+}, 5000);
+
+    </script>
+    </footer>
+</body>
+</html>

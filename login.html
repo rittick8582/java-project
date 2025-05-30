@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: 'Rockwell', 'Arial', sans-serif;
+            background-color: #fcfa87;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            animation: slideIn 1.5s ease-out;
+            max-height: 600px;
+            overflow: hidden;
+            overflow-y: auto;
+            background-color: #cefacd;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .button-group {
+            margin-bottom: 20px;
+        }
+        .login-button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Rockwell', 'Arial', sans-serif;
+            font-size: 20px;
+        }
+        .login-button:hover {
+            background-color: #45a049;
+            color: whitesmoke;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input {
+            width: 350px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e0f7fa;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
+            font-family: 'Rockwell', 'Arial', sans-serif;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #00796b;
+            background-color: #b2dfdb;
+            box-shadow: 0 0 8px 2px green;
+            border-color: green;
+        }
+        .form-group label {
+            display: block;
+            text-align: left;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .slide-in-text {
+            animation: slideIn 1.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes colorChange {
+            0% {
+                color: red;
+            }
+            25% {
+                color: green;
+            }
+            50% {
+                color: blue;
+            }
+            75% {
+                color: yellow;
+            }
+            100% {
+                color: black;
+            }
+        }
+        .color-change-text {
+            font-size: 25px;
+            font-weight: bold;
+            animation: colorChange 5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="color-change-text">SELECT USERTYPE</h2>
+        <div class="button-group">
+            <button class="login-button" onclick="showLoginForm('admin')">Admin</button>
+            <button class="login-button" onclick="showLoginForm('candidate')">User</button>
+        </div>
+        <div id="login-form">
+            Don't Have Any Account? <a href="registe.html">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        function showLoginForm(role) {
+            let formHtml = '';
+            if (role === 'admin') {
+                formHtml = `
+                    <h3 class="slide-in-text">Admin Login</h3>
+                    <form action="log.jsp" method="POST">
+                        <div class="form-group">
+                            <label for="adminUsername"></label>
+                            <input type="text" id="adminUsername" name="username" placeholder="Enter Username" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="adminPassword"></label>
+                            <input type="password" id="adminPassword" name="password" placeholder="Enter Password" required />
+                        </div>
+                        <button type="submit" class="login-button">Login</button>
+                    </form>
+                `;
+            } else if (role === 'candidate') {
+                formHtml = `
+                    <h3 class="slide-in-text">User Login</h3>
+                    <form action="login.jsp" method="POST">
+                        <div class="form-group">
+                            <label for="candidateUsername"></label>
+                            <input type="text" id="candidateUsername" name="username" placeholder="Enter Username" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="candidatePassword"></label>
+                            <input type="password" id="candidatePassword" name="password" placeholder="Enter Password" required />
+                        </div>
+                        <button type="submit" class="login-button">Login</button>
+                    </form>
+                `;
+            }
+
+            document.getElementById('login-form').innerHTML = formHtml;
+        }
+    </script>
+</body>
+</html>

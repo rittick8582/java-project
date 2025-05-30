@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form with Blue Text Boxes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+    /* Default styling for text input boxes */
+    input[type="text"], input[type="password"], input[type="number"], input[type="date"] {
+        background-color: lightblue; /* Set background color to light blue */
+        border: 1px solid #ccc; /* Optional: Add a border */
+        padding: 8px; /* Optional: Add padding to the input */
+        margin-bottom: 10px; /* Optional: Add space between inputs */
+        transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add smooth transition for glow effect */
+        font-family: Rockwell;
+        width: 100%; /* Make the input fields take up full container width */
+    }
+
+    /* Glow effect when the input is focused (user types in it) */
+    input[type="text"]:focus, 
+    input[type="password"]:focus, 
+    input[type="number"]:focus, 
+    input[type="date"]:focus {
+        box-shadow: 0 0 8px 2px blue; /* Blue glow effect */
+        border-color: blue; /* Change border color to blue */
+        font-size: 15px;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        background-color: lightblue;
+    }
+
+    /* Styling for submit button */
+    input[type="submit"] {
+        background-color: #4CAF50; /* Green background for the submit button */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-family: Rockwell;
+        width: 100%; /* Ensure the button takes up the full width */
+    }
+
+    /* Hover effect for the submit button */
+    input[type="submit"]:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+    /* Body styling */
+    body {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        min-height: 100vh; /* Ensure the body takes up full viewport height */
+        margin: 0;
+        background-color: #dcbaec; /* Background color */
+    }
+
+    /* Login container styling */
+    .login-container { 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        animation: slideIn 1.5s ease-out;
+        max-height: 600px; /* Limit the maximum height */
+        overflow: hidden; /* Prevent content overflow */
+        overflow-y: auto; /* Make content scrollable if it overflows */
+        background-color: #e5f3f8;
+        font-family: Rockwell;
+    }
+
+    .login-container input {
+        width: 100%; /* Ensure the inputs stretch to fit the container */
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    h2 {
+        font-family: Rockwell;
+        font-size: 25px;
+        font-weight: bold;
+        color: black;
+        text-decoration: underline; /* Corrected 'yellow' to 'underline' for text-decoration */
+    }
+
+    h2:hover {
+        color: orange;
+    }
+</style>
+
+    </head>
+    <body>
+        <center>
+            <form action="reg-process.jsp" method="post">
+                <div class="login-container">
+                    <center>
+                        <h2>User Register Form</h2>
+                    </center>
+                    <center>
+                    Name:
+                    <input type="text" name="name"><br>
+                    </center>
+                    UserName:
+                    <input type="text" name="user"><br>
+                    Password:
+                    <input type="text" name="password"><br>
+                    <!--
+                    Deposit Amount:<br>
+                    <input type="number" name="depamt" disabled><br>
+                    Date:<br>
+                    <input type="date" name="date1" disabled><br>
+                    WithDraw Amount:<br>
+                    <input type="number" name="withamt" disabled><br>
+                    Date:<br>
+                    <input type="date" name="date2" disabled><br>
+                    Transaction Amount:<br>
+                    <input type="number" name="transamt" disabled><br>
+                    Date:<br>
+                    <input type="date" name="date3" disabled><br>
+                    Total Amount:<br>
+                    <input type="number" name="totalamt" disabled><br>
+                    -->
+                    <input type="submit" value="Submit">
+                </div> 
+            </form>
+        </center>
+    </body>
+</html>
